@@ -1,0 +1,142 @@
+﻿@page "/"
+@* @using Car_Rental.Business.Classes
+@using Car_Rental.Common.Interfaces
+@using Car_Rental.Common.Enums
+@inject BookingProcessor bp *@
+
+<PageTitle>Car Rental Assignment</PageTitle>
+
+<h1>Car Rental Assignment</h1>
+
+<div class="row">
+    <h5>Vehicles</h5>
+    <table class="table table-borderless" , style="border:2px solid black; width: 80%">
+        <thead>
+            <tr>
+                <th>RegNo</th>
+                <th>Make</th>
+                <th>Odometer</th>
+                <th>Cost/Km</th>
+                <th>Vehicle Type</th>
+                <th>$/Day</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>ADC123</th>
+                <td>Volvo</td>
+                <td>10000</td>
+                <td>1</td>
+                <td>Combi</td>
+                <td>200</td>
+                <td><span class="badge rounded-pill bg-dark">Available</span></td>
+            </tr>
+            <tr>
+                <th>DEF456</th>
+                <td>Saab</td>
+                <td>20000</td>
+                <td>1</td>
+                <td>Sedan</td>
+                <td>100</td>
+                <td><span class="badge rounded-pill bg-dark">Available</span></td>
+            </tr>
+            <tr>
+                <th>GHI789</th>
+                <td>Tesla</td>
+                <td>1000</td>
+                <td>3</td>
+                <td>Sedan</td>
+                <td>100</td>
+                <td><span class="badge rounded-pill bg-danger">Booked</span></td>
+            </tr>
+            <tr>
+                <th>JKL012</th>
+                <td>Jeep</td>
+                <td>5000</td>
+                <td>1.5</td>
+                <td>Van</td>
+                <td>300</td>
+                <td><span class="badge rounded-pill bg-dark">Available</span></td>
+            </tr>
+            <tr>
+                <th>MNO345</th>
+                <td>Yamaha</td>
+                <td>30000</td>
+                <td>0.5</td>
+                <td>Motorcycle</td>
+                <td>50</td>
+                <td><span class="badge rounded-pill bg-dark">Available</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<br />
+
+<div class="row">
+    <h5>Bookings</h5>
+    <table class="table" , style="border:2px solid black; width: 80%">
+        <thead>
+            <tr>
+                <th>RegNo</th>
+                <th>Customer</th>
+                <th>Km Reneted</th>
+                <th>Km Returned</th>
+                <th>Reneted</th>
+                <th>Returned</th>
+                <th>Cost</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>GHI789</th>
+                <td>Doe John (12345)</td>
+                <td>1000</td>
+                <td></td>
+                <td>9/9/2023</td>
+                <td></td>
+                <td></td>
+                <td><span class="badge bg-danger">Open</span></td>
+            </tr>
+            <tr>
+                <th>JKL012</th>
+                <td>Doe John (98765)</td>
+                <td>5000</td>
+                <td>5000</td>
+                <td>9/9/2023</td>
+                <td>9/9/2023</td>
+                <td>300</td>
+                <td><span class="badge bg-success">Closed</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<br />
+
+<div class="row">
+    <h5>Customers</h5>
+    <table class="table" style="border:2px solid black; width: 30%">
+        <thead>
+            <tr>
+                <th>SSN</th>
+                <th>Last Name</th>
+                <th>First Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>12345</th>
+                <td>Doe</td>
+                <td>John</td>
+            </tr>
+            <tr>
+                <th>98765</th>
+                <td>Doe</td>
+                <td>Jane</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
