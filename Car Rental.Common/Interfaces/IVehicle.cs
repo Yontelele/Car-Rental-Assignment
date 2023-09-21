@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Car_Rental.Common.Interfaces
 {
-    internal class test
+    public interface IVehicle
     {
     }
 }
