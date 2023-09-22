@@ -3,7 +3,7 @@ using Car_Rental.Common.Interfaces;
 
 namespace Car_Rental.Data.Interfaces;
 
-/*public interface IData
+public interface IData
 {
     IEnumerable<IPerson> GetPersons();
 
@@ -11,4 +11,3 @@ namespace Car_Rental.Data.Interfaces;
 
     IEnumerable<IBooking> GetBookings();
 }
-*/

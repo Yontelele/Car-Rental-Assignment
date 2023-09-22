@@ -1,8 +1,8 @@
 ﻿@page "/"
-@* @using Car_Rental.Business.Classes
+@using Car_Rental.Business.Classes
 @using Car_Rental.Common.Interfaces
 @using Car_Rental.Common.Enums
-@inject BookingProcessor bp *@
+@inject BookingProcessor bp 
 
 <PageTitle>Car Rental Assignment</PageTitle>
 
@@ -140,3 +140,11 @@
         </tbody>
     </table>
 </div>
+
+
+<ul>
+    @foreach (var item in bp.GetVehicles)
+    {
+        <li></li>
+    }
+</ul>

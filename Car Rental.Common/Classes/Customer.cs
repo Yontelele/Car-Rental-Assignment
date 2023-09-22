@@ -1,12 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Car_Rental.Common.Interfaces;
 
-namespace Car_Rental.Common.Classes
+namespace Car_Rental.Common.Classes;
+
+public class Customer : IPerson
 {
-    internal class Customer
+    public int SSN { get; init; }
+
+    public string FirstName { get; init; }
+
+    public string LastName { get; init; }
+
+    public Customer(int ssn, string firstname, string lastname)
     {
+        SSN = ssn;
+        FirstName = firstname;
+        LastName = lastname;
     }
 }
