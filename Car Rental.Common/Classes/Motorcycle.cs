@@ -13,11 +13,11 @@ public class Motorcycle : IVehicle
 
     public double CostKm { get; init; }
 
-    public string VehicleType { get; init; }
+    public VehicleTypes VehicleTypes { get; init; }
 
     public int CostDay { get; init; }
 
-    public string Status { get; init; }
+    public VehicleStatus VehicleStatus { get; init; }
 
     public Motorcycle(string regno, string make, int odometer, double costkm, VehicleTypes vehicleTypes, int costday, VehicleStatus vehicleStatus)
     {
@@ -25,8 +25,8 @@ public class Motorcycle : IVehicle
         Make = make;
         Odometer = odometer;
         CostKm = costkm;
-        VehicleType = vehicleTypes.ToString();
+        VehicleTypes = vehicleTypes;
         CostDay = costday;
-        Status = vehicleStatus.ToString();
+        VehicleStatus = vehicleStatus;
     }
 }

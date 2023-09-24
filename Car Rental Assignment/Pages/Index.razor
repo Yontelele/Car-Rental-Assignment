@@ -143,8 +143,5 @@
 
 
 <ul>
-    @foreach (var item in bp.GetVehicles)
-    {
-        <li></li>
-    }
+    <li>@bp.GetVehicles(VehicleStatus.Available)</li>
 </ul>
