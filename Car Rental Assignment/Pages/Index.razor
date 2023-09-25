@@ -10,7 +10,7 @@
 
 <div class="row">
     <h5>Vehicles</h5>
-    <table class="table table-borderless" , style="border:2px solid black; width: 80%">
+    <table class="table table-borderless">
         <thead>
             <tr>
                 <th>RegNo</th>
@@ -23,51 +23,27 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th>ADC123</th>
-                <td>Volvo</td>
-                <td>10000</td>
-                <td>1</td>
-                <td>Combi</td>
-                <td>200</td>
-                <td><span class="badge rounded-pill bg-dark">Available</span></td>
-            </tr>
-            <tr>
-                <th>DEF456</th>
-                <td>Saab</td>
-                <td>20000</td>
-                <td>1</td>
-                <td>Sedan</td>
-                <td>100</td>
-                <td><span class="badge rounded-pill bg-dark">Available</span></td>
-            </tr>
-            <tr>
-                <th>GHI789</th>
-                <td>Tesla</td>
-                <td>1000</td>
-                <td>3</td>
-                <td>Sedan</td>
-                <td>100</td>
-                <td><span class="badge rounded-pill bg-danger">Booked</span></td>
-            </tr>
-            <tr>
-                <th>JKL012</th>
-                <td>Jeep</td>
-                <td>5000</td>
-                <td>1.5</td>
-                <td>Van</td>
-                <td>300</td>
-                <td><span class="badge rounded-pill bg-dark">Available</span></td>
-            </tr>
-            <tr>
-                <th>MNO345</th>
-                <td>Yamaha</td>
-                <td>30000</td>
-                <td>0.5</td>
-                <td>Motorcycle</td>
-                <td>50</td>
-                <td><span class="badge rounded-pill bg-dark">Available</span></td>
-            </tr>
+            @foreach (var vehicle in bp.GetVehicles())
+            {
+                <tr>
+                    <th>@vehicle.RegNo</th>
+                    <td>@vehicle.Make</td>
+                    <td>@vehicle.Odometer</td>
+                    <td>@vehicle.CostKm</td>
+                    <td>@vehicle.VehicleTypes</td>
+                    <td>@vehicle.CostDay</td>
+                    <td>
+                    @if (vehicle.VehicleStatus == VehicleStatus.Available)
+                    {
+                        <span class="badge rounded-pill bg-dark">Available</span>
+                    }
+                    else
+                    {
+                        <span class="badge rounded-pill bg-danger">Booked</span>
+                    }
+                    </td>
+                </tr>
+            } 
         </tbody>
     </table>
 </div>
@@ -118,7 +94,7 @@
 
 <div class="row">
     <h5>Customers</h5>
-    <table class="table" style="border:2px solid black; width: 30%">
+    <table class="table">
         <thead>
             <tr>
                 <th>SSN</th>
@@ -126,22 +102,15 @@
                 <th>First Name</th>
             </tr>
         </thead>
-        <tbody>
-            <tr>
-                <th>12345</th>
-                <td>Doe</td>
-                <td>John</td>
-            </tr>
-            <tr>
-                <th>98765</th>
-                <td>Doe</td>
-                <td>Jane</td>
-            </tr>
-        </tbody>
+         <tbody>
+            @foreach (var customer in bp.GetCustomers())
+            {
+                <tr>
+                    <th>@customer.SSN</th>
+                    <td>@customer.LastName</td>
+                    <td>@customer.FirstName</td>
+                </tr>
+            } 
+        </tbody> 
     </table>
 </div>
-
-
-<ul>
-    <li>@bp.GetVehicles(VehicleStatus.Available)</li>
-</ul>

@@ -15,19 +15,19 @@ public class BookingProcessor
     }
 
 
-    // Logik
-    public IEnumerable<Customer> GetCustomers()
+    //Logik
+    public IEnumerable<IPerson> GetCustomers()
     {
-
+        return data.GetPersons();
     }
 
     public IEnumerable<IVehicle> GetVehicles(VehicleStatus status = default)
     {
-
+        return data.GetVehicles();
     }
 
     public IEnumerable<IBooking> GetBookings()
     {
-
+        return data.GetBookings();
     }
 }
