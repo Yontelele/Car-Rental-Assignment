@@ -27,6 +27,8 @@ public class CollectionData : IData
         _vehicles.Add(new Car("JKL012", "Jeep", 5000, 1.5, VehicleTypes.Van, 300, VehicleStatus.Available));
         _vehicles.Add(new Motorcycle("MNO234", "Yamaha", 30000, 0.5, VehicleTypes.Motorcycle, 50, VehicleStatus.Available));
 
+        _bookings.Add(new Booking("GHI789", "Doe Larsson (98765)", 1000, null, "16/10/2023", "", null, VehicleStatus.Booked));
+        _bookings.Add(new Booking("DEF456", "Joe Larsson (12345)", 3000, 1000, "10/10/2023", "11/10/2023", 1100, VehicleStatus.Available));
     }
 
     public IEnumerable<IPerson> GetPersons()

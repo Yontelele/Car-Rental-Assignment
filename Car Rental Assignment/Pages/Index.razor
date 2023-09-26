@@ -55,7 +55,7 @@
 <div class="row">
     <h5>Bookings</h5>
     <div class="col-sm-6">
-        <table class="table" , style="border:1px solid black;">
+        <table class="table" style=" border:1px solid black;">
             <thead>
                 <tr>
                     <th>RegNo</th>
@@ -69,26 +69,28 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th>GHI789</th>
-                    <td>Doe John (12345)</td>
-                    <td>1000</td>
-                    <td></td>
-                    <td>9/9/2023</td>
-                    <td></td>
-                    <td></td>
-                    <td><span class="badge bg-danger">Open</span></td>
-                </tr>
-                <tr>
-                    <th>JKL012</th>
-                    <td>Doe John (98765)</td>
-                    <td>5000</td>
-                    <td>5000</td>
-                    <td>9/9/2023</td>
-                    <td>9/9/2023</td>
-                    <td>300</td>
-                    <td><span class="badge bg-success">Closed</span></td>
-                </tr>
+                @foreach (var booking in bp.GetBookings())
+                {
+                    <tr>
+                        <th>@booking.RegNo</th>
+                        <td>@booking.Customer</td>
+                        <td>@booking.KmReneted</td>
+                        <td>@booking.KmReturned</td>
+                        <td>@booking.Reneted</td>
+                        <td>@booking.Returned</td>
+                        <td>@booking.Cost</td>
+                        <td>
+                            @if (booking.VehicleStatus == VehicleStatus.Available)
+                            {
+                                <span class="badge bg-success">Closed</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-danger">Open</span>
+                            }
+                        </td>
+                    </tr>
+                }
             </tbody>
         </table>
     </div>

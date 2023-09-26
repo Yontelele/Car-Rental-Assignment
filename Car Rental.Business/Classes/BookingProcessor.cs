@@ -14,8 +14,6 @@ public class BookingProcessor
         this.data = data;
     }
 
-
-    //Logik
     public IEnumerable<IPerson> GetCustomers()
     {
         return data.GetPersons();
